@@ -7,17 +7,23 @@
 </head>
 
 <body id="body">
-	<div id="weather">
-		Your Weather Template
+	<div id="weather-area">
+
 	</div>
 
-	<div id="quote">
-		The Quote
+	<div id="quote-area">
+		
 	</div>
 
-	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
+	<div id="todo-area">
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+			<input type="text" name="todoInput" id="todoInputValue">
+			<button id="add-todo-button" type="submit">Add Todo</button>
+		</form>
+		<div id="todo-field">
+
+		</div>
+
 	</div>
 
 
