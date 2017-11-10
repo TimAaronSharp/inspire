@@ -25,7 +25,7 @@ function TodoService() {
 		todoList.push(todo)
 		$.post(baseUrl, todo)
 			.then(function (res) { // <-- WHAT DO YOU DO AFTER CREATING A NEW TODO?
-
+				getTodosCb(res)
 			})
 			.fail(logError)
 	}
@@ -41,15 +41,16 @@ function TodoService() {
 			method: 'PUT',
 			contentType: 'application/json',
 			url: baseUrl + '/' + todoId,
-			data: JSON.stringify(YOURTODOVARIABLEHERE)
+			data: JSON.stringify(todoId)
 		})
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				
 			})
 			.fail(logError)
 	}
 
-	this.removeTodo = function (todoId) {
+	this.removeTodo = function (todoId,getTodosCb) {
 		// Umm this one is on you to write.... It's also unique, like the ajax call above. The method is a DELETE
 		$.ajax({
 			method: 'DELETE',
@@ -58,6 +59,7 @@ function TodoService() {
 		})
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				getTodosCb(res)
 			})
 			.fail(logError)
 

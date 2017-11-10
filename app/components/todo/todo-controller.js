@@ -47,7 +47,6 @@ function TodoController() {
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
 		//YOU SHOULDN'T NEED TO CHANGE THIS
 		todoService.addTodo(todo, getTodos)
-		todoService.getTodos(draw)
 		//^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
 
@@ -59,10 +58,9 @@ function TodoController() {
 
 	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
-		debugger
-		todoService.removeTodo(todoId)
-		todoService.getTodos(draw)
-
+		// debugger
+		todoService.removeTodo(todoId, getTodos)
+		// todoService.getTodos(draw)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 
