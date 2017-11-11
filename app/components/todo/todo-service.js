@@ -30,7 +30,7 @@ function TodoService() {
 			.fail(logError)
 	}
 
-	this.toggleTodoStatus = function (todoId) {
+	this.toggleTodoStatus = function (todoId, getTodosCb) {
 		// MAKE SURE WE THINK THIS ONE THROUGH
 		//STEP 1: Find the todo by its index **HINT** todoList
 
@@ -41,16 +41,19 @@ function TodoService() {
 			method: 'PUT',
 			contentType: 'application/json',
 			url: baseUrl + '/' + todoId,
-			data: JSON.stringify(todoId)
+			// data: JSON.stringify(todoId)
 		})
 			.then(function (res) {
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
+				debugger
+				todoList[todoId].completed = !todoList[todoId].completed
+				getTodosCb(todoList)
 				
 			})
 			.fail(logError)
 	}
 
-	this.removeTodo = function (todoId,getTodosCb) {
+	this.removeTodo = function (todoId, getTodosCb) {
 		// Umm this one is on you to write.... It's also unique, like the ajax call above. The method is a DELETE
 		$.ajax({
 			method: 'DELETE',

@@ -26,19 +26,21 @@ function TodoController() {
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var item = todos[i];
-			console.log(item.todo)
 			todoTemplate += `
-			<input<ul style="display: inline-block";>${item.todo}</ul> <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
+			<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})">${item.todo} <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
+			console.log(item.todo)
 		}
 		todoFieldElem.innerHTML = todoTemplate
 	}
+	// document.getElementsByName(i)
 	this.addTodoFromForm = function (e) {
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
-		// TAKE THE INFORMATION FORM THE FORM
+		// TAKE THE INFORMATION FORM THE FORMs
 		// this.addTodoField()
 		var form = e.target
 		var todo = {
-			todo: form.todoInput.value
+			todo: form.todoInput.value,
+			completed: false
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 		form.todoInput.value = ''
@@ -68,3 +70,8 @@ function TodoController() {
 
 }
 
+
+
+
+
+// <input<ul style="display: inline-block";>${item.todo}</ul> <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
