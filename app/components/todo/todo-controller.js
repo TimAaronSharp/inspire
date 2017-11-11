@@ -9,7 +9,7 @@ function TodoController() {
 	var todoService = new TodoService()
 	var todoElem = document.getElementById('todo-area')
 	var todoFieldElem = document.getElementById('todo-field')
-	
+
 	// Use this getTodos function as your callback for all other edits
 	function getTodos() {
 		//FYI DONT EDIT ME :)
@@ -26,9 +26,14 @@ function TodoController() {
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var item = todos[i];
-			todoTemplate += `
+			if (item.completed == true) {
+				todoTemplate += `
+				<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})" checked><span style="text-decoration: line-through;">${item.todo}</span> <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
+			} else {
+				todoTemplate += `
 			<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})">${item.todo} <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
-			console.log(item.todo)
+				console.log(item.todo)
+			}
 		}
 		todoFieldElem.innerHTML = todoTemplate
 	}
@@ -53,6 +58,7 @@ function TodoController() {
 	}
 
 	this.toggleTodoStatus = function (todoId) {
+
 		// asks the service to edit the todo status
 		todoService.toggleTodoStatus(todoId, getTodos)
 		// YEP THATS IT FOR ME
