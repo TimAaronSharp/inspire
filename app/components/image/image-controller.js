@@ -7,7 +7,7 @@ function ImageController() {
 	function drawBackroundImage(image) {
 		// console.log(image)
 		if (image.large_url) {
-			document.body.style = `color: red; background-image: url(${image.large_url}); background-repeat: no-repeat; background-size: cover;`
+			document.body.style = `color: white; background-image: url(${image.large_url}); background-repeat: no-repeat; background-size: cover;`
 		} else {
 			imgService.getImage(drawBackroundImage)
 		}

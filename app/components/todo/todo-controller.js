@@ -23,8 +23,8 @@ function TodoController() {
 		//BUILD YOUR TODO TEMPLATE HERE
 		var todoTemplate = `
 		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
-		<input type="text" name="todoInput" id="todoInputValue">
-		<button id="add-todo-button" type="submit">Add Todo</button>
+		<input type="text" name="todoInput" id="todoInputValue" style="color:black">
+		<button id="add-todo-button" type="submit" style="color:black">Add Todo</button>
 		</form>
 		`
 		//DONT FORGET TO LOOP

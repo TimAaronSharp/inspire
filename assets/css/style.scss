@@ -1,4 +1,21 @@
 .bg{
-    background: rgba(211,211,211,.5);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
+}
+.clock-size{
+    font-size: 10em;
+}
+.container{
+    height: 100vh;
+}
+.todos{
+    min-height:70vh;
+}
+i{
+    color:rgba(255, 255, 255, 0.2);
+    
+}
+i:hover{
+    cursor: pointer;
+    color:rgba(255, 255, 255, 1);
 }

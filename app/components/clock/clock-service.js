@@ -1,13 +1,13 @@
-function ClockService(){
-    
-    function checkTime(i){
-        if(i<10){
+function ClockService() {
+
+    function checkTime(i) {
+        if (i < 10) {
             i = "0" + i
             return i
         }
     }
 
-    this.clock = function clock(){
+    this.clock = function clock() {
         var today = new Date()
         var hours = today.getHours()
         var minutes = today.getMinutes()
@@ -15,7 +15,7 @@ function ClockService(){
 
         checkTime(minutes)
         checkTime(seconds)
-        var time = hours + ':' + minutes + ':' + seconds
 
+        return today
     }
 }
