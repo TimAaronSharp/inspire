@@ -12,27 +12,21 @@
 <body id="body">
 	<div class="container">
 		<div class="weather-stuff row">
-			<div class="col-sm-12 col-md-2 bg" id="weather-area">
+			<div class="col-sm-12 col-md-2 col-lg-2 col-md-offset-1 col-lg-offset-1 bg" id="weather-area">
+
+			</div>
+			
+			<div class="col-sm-12 col-md-6 col-lg-6 bg text-center" id="clock-area">
 
 			</div>
 
-			<!-- </div> -->
-
-			<!-- <div class="clock row"> -->
-			<div class="col-sm-12 col-md-6 col-md-offset-1 bg" id="clock-area">
-
-			</div>
-
-		</div>
-
-
-
-		<div class="todos row">
-
-			<div class="col-sm-12 col-md-3 bg" id="todo-field">
+			<div class="col-sm-12 col-md-3 col-lg-3 bg" id="todo-field">
+				<form onsubmit="app.controllers.todoController.addTodoFromForm(event)" class="add-field">
+					<input type="text" name="todoInput" id="todoInputValue" style="color:black">
+					<button id="add-todo-button" type="submit" style="color:black">Add Todo</button>
+				</form>
 
 			</div>
-
 		</div>
 		<div class="quotes row">
 			<div class="col-sm-12 col-md-8 col-md-offset-2 pull-down bg" id="quote-area">

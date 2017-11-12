@@ -3,7 +3,7 @@
     border-radius: 5px;
 }
 .clock-size{
-    font-size: 10em;
+    font-size: 10rem;
 }
 .container{
     height: 100vh;
@@ -13,9 +13,21 @@
 }
 i{
     color:rgba(255, 255, 255, 0.2);
-    
 }
 i:hover{
     cursor: pointer;
     color:rgba(255, 255, 255, 1);
 }
+.add-field{
+    padding-top: 5px;
+}
+button{
+    background:none;
+    border:none;
+}
+.weather-stuff{
+    min-height:80vh;
+}
+// .m-tb{
+//     margin: auto auto;
+// }

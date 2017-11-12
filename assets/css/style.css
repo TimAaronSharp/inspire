@@ -4,7 +4,7 @@
 }
 
 .clock-size {
-  font-size: 10em;
+  font-size: 10rem;
 }
 
 .container {
@@ -22,4 +22,17 @@ i {
 i:hover {
   cursor: pointer;
   color: white;
+}
+
+.add-field {
+  padding-top: 5px;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+.weather-stuff {
+  min-height: 80vh;
 }

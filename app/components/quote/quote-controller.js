@@ -8,7 +8,7 @@ function QuoteController() {
 		qs.getQuote(function (quote) {
 			console.log('What is the quote', quote)
 			quoteTemplate +=`
-			<h4>${quote.quote}</h4>
+			<h4>${quote.quote} - <span style="font-style: italic; font-size: 1.5rem;">${quote.author}</span></h4>
 			
 			
 			`

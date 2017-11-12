@@ -22,10 +22,11 @@ function TodoController() {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var todoTemplate = `
-		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)" class="add-field">
 		<input type="text" name="todoInput" id="todoInputValue" style="color:black">
-		<button id="add-todo-button" type="submit" style="color:black">Add Todo</button>
+		<button id="add-todo-button" type="submit">Add Todo</button>
 		</form>
+		<h5>Tasks: ${todos.length}</h5>
 		`
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {

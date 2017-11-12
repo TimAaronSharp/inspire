@@ -17,7 +17,7 @@ function WeatherController() {
 			console.log(weather.main.temp)
 			var fahrenheit = 1.8 * (weather.main.temp - 273) + 32
 			weatherTemplate += `
-			<h2>${fahrenheit.toFixed(1)}°F<br>
+			<h2 class="m-tb">${fahrenheit.toFixed(1)}°F <img src="http://openweathermap.org/img/w/${weather.weather[0].icon}.png"><br>
 			${weather.name}</h2>
 			`
 			//What can you do with this weather object?

@@ -13,11 +13,6 @@ function ClockController() {
         return i
     }
 
-    this.clock = function clock() {
-
-
-    }
-
     function drawClock() {
         var today = new Date()
         var hours = today.getHours()
