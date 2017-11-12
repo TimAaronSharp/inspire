@@ -14,6 +14,10 @@ function ImageController() {
 	}
 	imgService.getImage(drawBackroundImage)
 
+	this.refreshBackgroundImage = function refreshBackgroundImage() {
+		imgService.getImage(drawBackroundImage)
+	}
+
 }
 
 
