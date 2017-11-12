@@ -7,7 +7,6 @@ function TodoController() {
 	// removeTodo takes in a todoId and sends a delete request to the server
 	// **** HINT: Everytime you make a change to any todo don't forget to get the todo list again
 	var todoService = new TodoService()
-	var todoElem = document.getElementById('todo-area')
 	var todoFieldElem = document.getElementById('todo-field')
 
 	// Use this getTodos function as your callback for all other edits
@@ -22,16 +21,23 @@ function TodoController() {
 	function draw(todos) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
-		var todoTemplate = ''
+		var todoTemplate = `
+		<form onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+		<input type="text" name="todoInput" id="todoInputValue">
+		<button id="add-todo-button" type="submit">Add Todo</button>
+		</form>
+		`
 		//DONT FORGET TO LOOP
 		for (var i = 0; i < todos.length; i++) {
 			var item = todos[i];
 			if (item.completed == true) {
 				todoTemplate += `
-				<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})" checked><span style="text-decoration: line-through;">${item.todo}</span> <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
+				<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})" checked><span style="text-decoration: line-through;">${item.todo} </span><i onclick="app.controllers.todoController.removeTodo(${i})" class="fa fa-trash-o pull-right" aria-hidden="true"></i><br>
+				`
 			} else {
 				todoTemplate += `
-			<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})">${item.todo} <button onclick="app.controllers.todoController.removeTodo(${i})">Delete</button>`
+			<input type="checkbox" name="${i}" onclick="app.controllers.todoController.toggleTodoStatus(${i})">${item.todo} <i onclick="app.controllers.todoController.removeTodo(${i})" class="fa fa-trash-o pull-right" aria-hidden="true"></i><br>
+			`
 				console.log(item.todo)
 			}
 		}
