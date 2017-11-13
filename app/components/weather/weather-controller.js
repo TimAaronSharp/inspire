@@ -25,7 +25,7 @@ function WeatherController() {
 			${weather.name}</h2>
 
 			<div class="image-refresh pull-right" onclick="app.controllers.imgController.refreshBackgroundImage()">
-				<i class="fa fa-picture-o" aria-hidden="true"></i><i class="fa fa-refresh" 	aria-hidden="true"></i>
+				<i class="fa fa-picture-o" aria-hidden="true"></i>
 			</div>
 			`
 				//What can you do with this weather object?
@@ -45,7 +45,7 @@ function WeatherController() {
 			${weather.name}</h2>
 
 			<div class="image-refresh pull-right" onclick="app.controllers.imgController.refreshBackgroundImage()">
-				<i class="fa fa-picture-o" aria-hidden="true"></i><i class="fa fa-refresh" 	aria-hidden="true"></i>
+				<i class="fa fa-picture-o" aria-hidden="true"></i>
 			</div>
 			`
 				//What can you do with this weather object?
@@ -65,7 +65,7 @@ function WeatherController() {
 			${weather.name}</h2>
 
 			<div class="image-refresh pull-right" onclick="app.controllers.imgController.refreshBackgroundImage()">
-				<i class="fa fa-picture-o" aria-hidden="true"></i><i class="fa fa-refresh" 	aria-hidden="true"></i>
+				<i class="fa fa-picture-o" aria-hidden="true"></i>
 			</div>
 			`
 				//What can you do with this weather object?
